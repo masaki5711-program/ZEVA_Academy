@@ -35,6 +35,12 @@ python -m http.server 8000   # → http://localhost:8000
 
 リポジトリの Settings → Pages → Branch: `main` / `(root)` を選択するだけで公開できます。
 
+### 公開サイトへのデプロイ / Deploy
+
+GitHub の `main` に入ると、GitHub Actions（`.github/workflows/deploy.yml`）が検証 → AIチャットの知識ファイルの再生成 → 検索テスト → Firebase Hosting へのデプロイを順に行います。検証かテストが落ちるとデプロイされません。
+
+Pushing to `main` on GitHub runs validation, rebuilds the chat knowledge files, runs the retrieval test and deploys to Firebase Hosting. A failed check stops the deploy. Authentication is keyless (Workload Identity Federation), so the repository holds no deploy secret.
+
 ## ディレクトリ / Layout
 
 ```

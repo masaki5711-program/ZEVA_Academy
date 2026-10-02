@@ -1,0 +1,46 @@
+name: Deploy to Firebase Hosting
+
+# main に入ったものを、検証してから公開サイトへ出す。
+# 認証は Workload Identity 連携（鍵ファイルなし）。Google Cloud 側でこのリポジトリの main だけを許可している。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-live
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate content
+        run: node tools/validate.js
+
+      - name: Rebuild chat knowledge
+        run: node tools/build_knowledge.js
+
+      - name: Test chat retrieval
+        run: node tools/test_chat.js
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/577430113741/locations/global/workloadIdentityPools/github/providers/github-oidc
+          service_account: github-deploy@zeva-academy-9c3c8.iam.gserviceaccount.com
+
+      - name: Deploy
+        run: npx --yes firebase-tools@15 deploy --only hosting --project zeva-academy-9c3c8 --non-interactive
