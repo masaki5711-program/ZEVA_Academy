@@ -1,0 +1,171 @@
+/* ZEVA Academy — UI strings and track metadata. */
+(function () {
+  'use strict';
+  const ZA = window.ZA;
+
+  ZA.langNames = { ja: '日本語', en: 'English', id: 'Bahasa Indonesia' };
+
+  ZA.tracks = [
+    {
+      id: 'ie', stage: 0, color: 'teal', icon: '🧰',
+      name: { ja: '基礎IE', en: 'IE Fundamentals', id: 'Dasar IE' },
+      tag: { ja: 'STAGE 0 ・ 準備', en: 'STAGE 0 · Prep', id: 'TAHAP 0 · Persiapan' },
+      desc: {
+        ja: 'IE（インダストリアル・エンジニアリング）の用語・計算方法・統計の基礎を学びます。ZEVAを学ぶための共通言語です。',
+        en: 'Learn the vocabulary, calculations and basic statistics of Industrial Engineering — the common language you need before ZEVA.',
+        id: 'Pelajari istilah, cara perhitungan, dan statistik dasar Industrial Engineering — bahasa yang sama sebelum mempelajari ZEVA.',
+      },
+      audience: {
+        ja: 'IEをこれから学ぶ方・復習したい方',
+        en: 'New to IE, or want a refresher',
+        id: 'Baru mengenal IE atau ingin mengulang',
+      },
+    },
+    {
+      id: 'z1', stage: 1, color: 'navy', icon: '🧭',
+      name: { ja: 'ZEVA 基礎', en: 'ZEVA Foundations', id: 'Dasar ZEVA' },
+      tag: { ja: 'STAGE 1 ・ 理解する', en: 'STAGE 1 · Understand', id: 'TAHAP 1 · Memahami' },
+      desc: {
+        ja: 'ZEVAとは何か、なぜ「バラツキ」に着目するのか。根底ロジック・原則体系・理論値・7つのバラツキ要因を理解します。',
+        en: 'What ZEVA is and why it focuses on variation: the root logic, the principle system, the theoretical value and the seven variation factors.',
+        id: 'Apa itu ZEVA dan mengapa fokus pada variasi: logika dasar, sistem prinsip, nilai teoretis, dan tujuh faktor variasi.',
+      },
+      audience: { ja: '全員（オペレーター〜管理者）', en: 'Everyone (operators to managers)', id: 'Semua orang (operator hingga manajer)' },
+    },
+    {
+      id: 'z2', stage: 2, color: 'blue', icon: '🛠',
+      name: { ja: 'ZEVA 実践', en: 'ZEVA Practice', id: 'Praktik ZEVA' },
+      tag: { ja: 'STAGE 2 ・ 使いこなす', en: 'STAGE 2 · Apply', id: 'TAHAP 2 · Menerapkan' },
+      desc: {
+        ja: 'GPC制御理論、GPC-M/GPC-H、動作安定の原理、ハイブリッド・トリアージ、Quick GPC、PDCA-Sを現場で使えるようにします。',
+        en: 'Put GPC control theory, GPC-M/GPC-H, motion stability, hybrid triage, Quick GPC and PDCA-S to work on the shop floor.',
+        id: 'Terapkan teori kontrol GPC, GPC-M/GPC-H, stabilitas gerakan, triase hibrida, Quick GPC, dan PDCA-S di lantai produksi.',
+      },
+      audience: { ja: '班長・工程技術者', en: 'Team leaders & process engineers', id: 'Kepala regu & process engineer' },
+    },
+    {
+      id: 'z3', stage: 3, color: 'green', icon: '🚀',
+      name: { ja: 'ZEVA 応用', en: 'ZEVA Advanced', id: 'ZEVA Lanjutan' },
+      tag: { ja: 'STAGE 3 ・ 率いる', en: 'STAGE 3 · Lead', id: 'TAHAP 3 · Memimpin' },
+      desc: {
+        ja: '理論値の改善手法、Deep GPC（DMAIC）、評価指標体系、デジタル化の段階的実装、導入プロセス、総合ケーススタディで改善を率いる力を養います。',
+        en: 'Lead improvement with theoretical-value methods, Deep GPC (DMAIC), the metric system, staged digitalisation, roll-out and integrated case studies.',
+        id: 'Pimpin perbaikan dengan metode nilai teoretis, Deep GPC (DMAIC), sistem indikator, digitalisasi bertahap, implementasi, dan studi kasus terpadu.',
+      },
+      audience: { ja: 'マネージャー・改善リーダー', en: 'Managers & improvement leaders', id: 'Manajer & pemimpin perbaikan' },
+    },
+  ];
+
+  ZA.ui = {
+    siteName: { ja: 'ZEVA Academy', en: 'ZEVA Academy', id: 'ZEVA Academy' },
+    siteSub: { ja: 'バラツキゼロ生産システムを段階的に学ぶ', en: 'Learn the Zero Variation Production System step by step', id: 'Belajar Zero Variation Production System langkah demi langkah' },
+    navHome: { ja: 'ホーム', en: 'Home', id: 'Beranda' },
+    navPath: { ja: '学習パス', en: 'Learning path', id: 'Jalur belajar' },
+    navSim: { ja: '演習モード', en: 'Simulation', id: 'Simulasi' },
+    navGlossary: { ja: '用語集', en: 'Glossary', id: 'Glosarium' },
+    navFormulas: { ja: '公式集', en: 'Formulas', id: 'Rumus' },
+    navPlacement: { ja: 'レベル診断', en: 'Placement test', id: 'Tes penempatan' },
+    navAbout: { ja: 'このサイトについて', en: 'About', id: 'Tentang' },
+    navAsk: { ja: 'ZEVAに質問', en: 'Ask ZEVA', id: 'Tanya ZEVA' },
+    theme: { ja: 'テーマ切替', en: 'Toggle theme', id: 'Ganti tema' },
+    language: { ja: '言語', en: 'Language', id: 'Bahasa' },
+    menu: { ja: 'メニュー', en: 'Menu', id: 'Menu' },
+
+    heroKicker: { ja: 'Zero Variation Production System', en: 'Zero Variation Production System', id: 'Zero Variation Production System' },
+    heroTitle: { ja: 'バラツキを制する者が、\n理論値に到達する。', en: 'Control variation,\nreach the theoretical value.', id: 'Kendalikan variasi,\ncapai nilai teoretis.' },
+    heroLead: {
+      ja: 'ZEVAは「バラツキの根源を断ち、理論値への収束を、標準化の循環で持続させる」生産方式です。IEの基礎から実践・応用まで、4つのステージで完全に解説します。',
+      en: 'ZEVA is a production system that “cuts the root of variation, converges on the theoretical value, and sustains it through the cycle of standardization.” From IE basics to advanced practice, it is fully explained in four stages.',
+      id: 'ZEVA adalah sistem produksi yang “memutus akar variasi, mendekati nilai teoretis, dan mempertahankannya melalui siklus standardisasi.” Dari dasar IE hingga praktik lanjutan, dijelaskan lengkap dalam empat tahap.',
+    },
+    ctaStart: { ja: 'はじめから学ぶ', en: 'Start learning', id: 'Mulai belajar' },
+    ctaContinue: { ja: '続きから学ぶ', en: 'Continue', id: 'Lanjutkan' },
+    ctaPlacement: { ja: 'どこから始める？ レベル診断', en: 'Where to start? Take the placement test', id: 'Mulai dari mana? Ikuti tes penempatan' },
+    heroQ: { ja: 'IEの基礎に自信がありますか？', en: 'Confident with IE basics?', id: 'Yakin dengan dasar IE?' },
+    heroQyes: { ja: 'はい → ZEVA基礎から', en: 'Yes → start at ZEVA Foundations', id: 'Ya → mulai dari Dasar ZEVA' },
+    heroQno: { ja: 'いいえ → 基礎IEから', en: 'No → start at IE Fundamentals', id: 'Tidak → mulai dari Dasar IE' },
+
+    stagesTitle: { ja: '4つのステージで段階的に学ぶ', en: 'Four stages, one step at a time', id: 'Empat tahap, selangkah demi selangkah' },
+    stagesLead: { ja: '各モジュールは「解説 → インタラクティブ演習 → 確認テスト」で構成。テストで80%以上正解すると修了です。', en: 'Each module is “explanation → interactive practice → quiz”. Score 80% or more on the quiz to complete it.', id: 'Setiap modul terdiri dari “penjelasan → latihan interaktif → kuis”. Skor 80% atau lebih untuk menyelesaikannya.' },
+    modulesCount: { ja: '{n} モジュール', en: '{n} modules', id: '{n} modul' },
+    minutesTotal: { ja: '約 {n} 分', en: '≈ {n} min', id: '± {n} menit' },
+    minutes: { ja: '{n}分', en: '{n} min', id: '{n} mnt' },
+    audience: { ja: '対象', en: 'For', id: 'Untuk' },
+    completed: { ja: '修了', en: 'Completed', id: 'Selesai' },
+    inProgress: { ja: '学習中', en: 'In progress', id: 'Sedang belajar' },
+    notStarted: { ja: '未着手', en: 'Not started', id: 'Belum mulai' },
+    yourProgress: { ja: 'あなたの進捗', en: 'Your progress', id: 'Kemajuan Anda' },
+    overall: { ja: '全体', en: 'Overall', id: 'Keseluruhan' },
+    resetProgress: { ja: '進捗をリセット', en: 'Reset progress', id: 'Atur ulang kemajuan' },
+    resetConfirm: { ja: '学習進捗をすべて消去します。よろしいですか？', en: 'This clears all learning progress. Continue?', id: 'Semua kemajuan belajar akan dihapus. Lanjutkan?' },
+
+    whyTitle: { ja: 'なぜ「ムダ」ではなく「バラツキ」なのか', en: 'Why “variation” rather than “waste”?', id: 'Mengapa “variasi”, bukan “pemborosan”?' },
+    featureTitle: { ja: 'このサイトの特長', en: 'What you get', id: 'Yang Anda dapatkan' },
+
+    objectives: { ja: 'このモジュールの学習目標', en: 'Learning objectives', id: 'Tujuan pembelajaran' },
+    prereq: { ja: '推奨する事前学習', en: 'Recommended first', id: 'Disarankan dipelajari dulu' },
+    contents: { ja: '目次', en: 'Contents', id: 'Daftar isi' },
+    keyPoints: { ja: 'まとめ：押さえるべきポイント', en: 'Key takeaways', id: 'Poin penting' },
+    quiz: { ja: '確認テスト', en: 'Quiz', id: 'Kuis' },
+    quizLead: { ja: '{n}問。80%以上の正解で修了です。', en: '{n} questions. Score 80% or more to complete.', id: '{n} soal. Skor 80% atau lebih untuk lulus.' },
+    submit: { ja: '採点する', en: 'Submit', id: 'Kirim' },
+    retry: { ja: 'もう一度', en: 'Try again', id: 'Coba lagi' },
+    answerAll: { ja: 'すべての問題に回答してください', en: 'Please answer every question', id: 'Jawab semua soal' },
+    scoreIs: { ja: '得点 {s} / {n}（{p}）', en: 'Score {s} / {n} ({p})', id: 'Skor {s} / {n} ({p})' },
+    passMsg: { ja: '合格！ このモジュールを修了しました 🎉', en: 'Passed! Module completed 🎉', id: 'Lulus! Modul selesai 🎉' },
+    failMsg: { ja: 'あと少し。解説を読み直して再挑戦しましょう。', en: 'Almost there. Review the explanations and try again.', id: 'Hampir. Baca ulang penjelasan dan coba lagi.' },
+    best: { ja: 'ベスト', en: 'Best', id: 'Terbaik' },
+    prev: { ja: '前へ', en: 'Previous', id: 'Sebelumnya' },
+    next: { ja: '次へ', en: 'Next', id: 'Berikutnya' },
+    backToTrack: { ja: 'ステージ一覧へ', en: 'Back to stage', id: 'Kembali ke tahap' },
+    correct: { ja: '正解', en: 'Correct', id: 'Benar' },
+    incorrect: { ja: '不正解', en: 'Not quite', id: 'Kurang tepat' },
+    check: { ja: 'チェック', en: 'Check', id: 'Cek' },
+    tryIt: { ja: 'やってみよう', en: 'Try it', id: 'Coba' },
+    reset: { ja: 'リセット', en: 'Reset', id: 'Atur ulang' },
+    explanation: { ja: '解説', en: 'Explanation', id: 'Penjelasan' },
+    example: { ja: '計算例', en: 'Worked example', id: 'Contoh perhitungan' },
+    result: { ja: '結果', en: 'Result', id: 'Hasil' },
+    where: { ja: 'ここで', en: 'where', id: 'dengan' },
+    moduleNotFound: { ja: 'モジュールが見つかりません', en: 'Module not found', id: 'Modul tidak ditemukan' },
+    comingSoon: { ja: 'このモジュールは準備中です。', en: 'This module is being prepared.', id: 'Modul ini sedang disiapkan.' },
+    level: { ja: '難易度', en: 'Level', id: 'Tingkat' },
+
+    calloutKey: { ja: 'ポイント', en: 'Key point', id: 'Poin kunci' },
+    calloutNote: { ja: '補足', en: 'Note', id: 'Catatan' },
+    calloutWarn: { ja: '注意', en: 'Caution', id: 'Perhatian' },
+    calloutZeva: { ja: 'ZEVAとのつながり', en: 'ZEVA connection', id: 'Kaitan dengan ZEVA' },
+    calloutExample: { ja: '例', en: 'Example', id: 'Contoh' },
+    calloutTip: { ja: 'ヒント', en: 'Tip', id: 'Tips' },
+
+    glossaryTitle: { ja: '用語集', en: 'Glossary', id: 'Glosarium' },
+    glossaryLead: { ja: 'IE・統計・品質管理・ZEVAの用語を3言語で検索できます。', en: 'Search IE, statistics, quality and ZEVA terms in three languages.', id: 'Cari istilah IE, statistik, mutu, dan ZEVA dalam tiga bahasa.' },
+    search: { ja: '用語を検索…', en: 'Search terms…', id: 'Cari istilah…' },
+    all: { ja: 'すべて', en: 'All', id: 'Semua' },
+    catIe: { ja: 'IE', en: 'IE', id: 'IE' },
+    catStat: { ja: '統計', en: 'Statistics', id: 'Statistik' },
+    catQc: { ja: '品質・改善', en: 'Quality & Kaizen', id: 'Mutu & Kaizen' },
+    catZeva: { ja: 'ZEVA', en: 'ZEVA', id: 'ZEVA' },
+    learnIn: { ja: '学習モジュール', en: 'Learn in', id: 'Dipelajari di' },
+    otherLangs: { ja: '他言語', en: 'Other languages', id: 'Bahasa lain' },
+    noResults: { ja: '該当する用語がありません', en: 'No matching terms', id: 'Tidak ada istilah yang cocok' },
+
+    formulasTitle: { ja: '公式集', en: 'Formula sheet', id: 'Lembar rumus' },
+    formulasLead: { ja: 'IEとZEVAで使う計算式の一覧です。印刷して手元に置いておけます。', en: 'Every formula used in IE and ZEVA on one sheet — print it and keep it handy.', id: 'Semua rumus IE dan ZEVA dalam satu lembar — cetak dan simpan.' },
+    print: { ja: '印刷', en: 'Print', id: 'Cetak' },
+
+    placementTitle: { ja: 'レベル診断テスト', en: 'Placement test', id: 'Tes penempatan' },
+    placementStart: { ja: '診断を始める', en: 'Start', id: 'Mulai' },
+    placementResult: { ja: '診断結果', en: 'Your result', id: 'Hasil Anda' },
+    recommendIe: { ja: 'まずは「基礎IE」から始めることをおすすめします。特に次のモジュールを重点的に学びましょう：', en: 'We recommend starting with “IE Fundamentals”. Focus especially on:', id: 'Kami sarankan mulai dari “Dasar IE”. Fokus terutama pada:' },
+    recommendZeva: { ja: 'IEの基礎は十分です！「ZEVA 基礎」から始めましょう。必要に応じて次のモジュールで復習できます：', en: 'Your IE basics are solid! Start with “ZEVA Foundations”. Review these if needed:', id: 'Dasar IE Anda kuat! Mulai dari “Dasar ZEVA”. Ulangi modul ini bila perlu:' },
+    goTo: { ja: '{x} へ進む', en: 'Go to {x}', id: 'Ke {x}' },
+
+    aboutTitle: { ja: 'このサイトについて', en: 'About this site', id: 'Tentang situs ini' },
+    footer: {
+      ja: 'ZEVA Academy — 教育目的の学習サイトです。掲載している数値例はすべて説明用の架空の値です。',
+      en: 'ZEVA Academy — an educational site. All numeric examples are illustrative, invented values.',
+      id: 'ZEVA Academy — situs edukasi. Semua contoh angka adalah nilai ilustrasi (fiktif).',
+    },
+  };
+})();

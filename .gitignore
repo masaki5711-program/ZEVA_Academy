@@ -1,0 +1,6 @@
+tools/forbidden.local.txt
+.DS_Store
+Thumbs.db
+node_modules/
+firebase-debug.log
+.firebase/

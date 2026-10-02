@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZEVA Academy — component gallery (dev)</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>.g-item{margin:0 0 32px}.g-item>h2{font-family:monospace;font-size:14px;color:var(--muted)}</style>
+</head>
+<body>
+  <main class="page narrow" id="g"></main>
+  <script src="../js/core.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../content/glossary.js"></script>
+  <script src="../js/blocks.js"></script>
+  <script src="../js/diagrams.js"></script>
+  <script src="../js/widgets-ie.js"></script>
+  <script src="../js/widgets-zeva.js"></script>
+  <script>
+    // Dev-only: open tools/gallery.html?lang=en&only=diagrams
+    const q = new URLSearchParams(location.search);
+    ZA.lang = q.get('lang') || 'ja';
+    const only = q.get('only');
+    const g = document.getElementById('g');
+    const add = (name, block) => {
+      const wrap = ZA.h('section.g-item', null, ZA.h('h2', { text: name }));
+      try { wrap.appendChild(ZA.renderBlock(block)); } catch (e) { wrap.appendChild(ZA.h('pre', { text: 'ERROR ' + e.stack })); }
+      g.appendChild(wrap);
+    };
+    if (only !== 'widgets') Object.keys(ZA.diagrams).forEach((n) => add('diagram:' + n, { type: 'diagram', name: n }));
+    if (only !== 'diagrams') Object.keys(ZA.widgets).filter((n) => n !== 'sort-game' && n !== 'scenario').forEach((n) => add('widget:' + n, { type: 'widget', name: n, props: {} }));
+  </script>
+</body>
+</html>

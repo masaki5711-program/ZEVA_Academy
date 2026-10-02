@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>現場再建記 — ZEVA Academy</title>
+<meta name="description" content="16週で木工ラインの不良を立て直すシミュレーション。調べる週と直す週をどう配るかを決める。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<div class="g-shell">
+  <header class="g-top">
+    <a class="g-back" href="../" title="ZEVA Academy へ戻る">←</a>
+    <div class="g-title">
+      <strong id="g-name">現場再建記</strong>
+      <span class="g-sub" id="g-sub">16週のライン再建シミュレーション</span>
+    </div>
+    <div class="g-top-right">
+      <select id="g-lang" class="lang-select" aria-label="Language">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+        <option value="id">Indonesia</option>
+      </select>
+      <button id="g-theme" class="icon-btn" type="button" title="表示切替">◐</button>
+    </div>
+  </header>
+  <main id="g-main"></main>
+</div>
+<script src="../js/core.js"></script>
+<!-- 土台 → 図 → シナリオ → モデル → 画面 → 分析 → 結果 → 生産性のライン → 手帳 → 進行 -->
+<script src="core.js"></script>
+<script src="charts.js"></script>
+<script src="scenarios.js"></script>
+<script src="model.js"></script>
+<script src="screens.js"></script>
+<script src="analyze.js"></script>
+<script src="result.js"></script>
+<script src="prod-model.js"></script>
+<script src="prod-screens.js"></script>
+<script src="prod-analyze.js"></script>
+<script src="prod-result.js"></script>
+<script src="notebook.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
